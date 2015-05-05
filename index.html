@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Babak Photography</title>
+		<meta name="description" content="Blueprint: Blueprint: Google Grid Gallery" />
+		<meta name="keywords" content="google getting started gallery, image gallery, image grid, template, masonry" />
+		<meta name="author" content="Karolina Nilsson" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="clearfix">
+				<span>Babak Miraki</span>
+				<h1>Photography</h1>
+				<nav>
+				<ul>
+					<a href="/travels/">Travels</a>
+					<a href="/people/">People</a>
+					<a href="/weddings/">Weddings</a>
+					<a href="/contact/">Contact</a>
+				</nav>
+			</header>
+			<hr>
+			<div id="grid-gallery" class="grid-gallery">
+				<section class="grid-wrap" id="travel">
+					<!-- the script will fill this up -->
+				</section><!-- // grid-wrap -->
+				<section class="slideshow" id="travel-slideshow">
+					<!-- the script will this up -->
+				</section><!-- // slideshow -->
+			</div><!-- // grid-gallery -->
+		</div>
+		<script>
+			// Fill up the images
+			var textThumbs = "<ul class=\"grid\"><li class=\"grid-sizer\" id=\"travel\"><\/li>";
+			var textSlideshow = "<ul>";
+			for(var i = 1; i < 19; i++) {
+				textThumbs += "<li><figure><img src=\"img\/thumb\/" + i + ".jpg\" alt=\"img" + i + "\" \/><\/figure><\/li>"
+				textSlideshow += "<li><figure><figcaption><h3>Figure Caption<\/h3><\/figcaption><img src=\"img\/large\/" + i + ".jpg\" alt=\"img" + i + "\"><\/figure><\/li>";
+			}
+			textThumbs += "<\/ul>";
+			textSlideshow += "<\/ul>";
+			
+			textSlideshow += "<nav><span class=\"icon nav-prev\"><\/span><span class=\"icon nav-next\"><\/span><span class=\"icon nav-close\"><\/span><\/nav><div class=\"info-keys icon\">Navigate with arrow keys<\/div>";
+			
+			// Add the images to the html document
+			document.getElementById("travel").innerHTML = textThumbs;
+			document.getElementById("travel-slideshow").innerHTML = textSlideshow;
+		</script>
+		
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/cbpGridGallery.js"></script>
+		<script>
+			new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+		</script>
+	</body>
+</html>
